@@ -158,6 +158,7 @@ function draw() {
   DrawGraph();
   //noStroke();
   fill(0);
+  stroke(0);
   text("Healthy probability: P="+P+"| real P="+real_P, 0, 10);
 
   text("Resolution of P="+P_sol+"| # loops="+Nloops, 0, 30);
@@ -255,7 +256,7 @@ function DrawGraph(){
   noStroke;
   fill(0);
   text("0", 450, 370);
-  text("Arrival \n rate", 600, 370);
+  text("Prob. of healthy link", 550, 370);
   text("1.0", 750, 370);
   
   text("0", 440, 350);
