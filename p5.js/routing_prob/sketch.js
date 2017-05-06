@@ -58,6 +58,9 @@ function setup() {
   buttonS = createButton("save to text");
   buttonS.mousePressed(saveText);
   buttonS.position(90,490);
+  
+  greeting = createElement('p', 'Problem: <a href="https://github.com/khanhdang/routing-prob/blob/master/doc/graph.pdf">link</a>;  Source code: <a href="https://github.com/khanhdang/routing-prob">link</a>');
+  greeting.position(0, 500);
 }
 function saveText() {
   var content = "";
