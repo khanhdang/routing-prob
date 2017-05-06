@@ -11,7 +11,7 @@ var button;
 var input;
 var buttonP, buttonX, buttonS, buttonRes;
 var values;
-var Nloops = 200;
+var Nloops = 10000;
 var arrival = [];
 var arrival_rate;
 var statArr = [];
@@ -19,7 +19,7 @@ var statP = [];
 
 
 function setup() {
-  createCanvas(400,420);
+  createCanvas(800,400);
   //nodes = new NodeX[dim_x][dim_y];
   fimage = loadImage("./assests/failed_link.png");
   fimage2 = loadImage("./assests/failed_link90.png");
@@ -155,6 +155,7 @@ function draw() {
   noStroke();
   fill(244);
   rect(0,0,400,400);
+  DrawGraph();
   //noStroke();
   fill(0);
   text("Healthy probability: P="+P+"| real P="+real_P, 0, 10);
@@ -241,6 +242,44 @@ function NetworkRoute(){
       
     }
   }
+}
+
+function DrawGraph(){
+  // input statP, statArr
+  strokeWeight(3);
+  stroke(17);
+  fill(17);
+  line(450, 350, 750, 350);
+  line(450, 350, 450, 50);
+  strokeWeight(1);
+  noStroke;
+  fill(0);
+  text("0", 450, 370);
+  text("Arrival \n rate", 600, 370);
+  text("1.0", 750, 370);
+  
+  text("0", 440, 350);
+  text("Arrival \n rate", 410, 175);
+  text("1.0", 430, 50);
+  
+  
+  var posx, posy;
+  for (var i=0; i<statP.length; i++){
+    strokeWeight(5);
+    fill(255,0,0);
+    stroke(255,0,0);
+    posx = 450+statP[i]*(750-450);
+    posy = 350-statArr[i]*(300);
+    //console.log(posx);
+    //console.log(posy);
+    point(posx,posy);
+    strokeWeight(1);
+    fill(0,0,255);
+    stroke(0,0,255);
+    //text(statP[i]+":"+statArr[i],posx ,posy + 10);
+    text(statArr[i],posx ,posy + 10);
+  }
+  
 }
 
 function NodeX(){
