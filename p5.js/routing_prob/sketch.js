@@ -291,9 +291,22 @@ function DrawGraph(){
     posy = 350-calarr*(300);
     point(posx,posy);
 
-    strokeWeight(1);
   }
-  
+  // legend
+ 
+  strokeWeight(5);
+  fill(255,0,0);
+  stroke(255,0,0);
+  point(465,389);
+  fill(0,255,0);
+  stroke(0,255,0);
+  point(565,389);
+  strokeWeight(1);
+  stroke(0);
+  noStroke;
+  fill(0);
+  text("simulation", 470, 392);
+  text("Tuan's calc", 570, 392);
 }
 
 function NodeX(){
