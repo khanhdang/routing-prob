@@ -101,7 +101,7 @@ function resetStat(){
 }
 
 function setL(){
-  Nloops = inputL.value();
+  Nloops = Number(inputL.value());
   console.log("You set to run "+Nloops+" loops.");
   inputL.value('');
   for (var z=0; z<Nloops; z++){
@@ -110,7 +110,8 @@ function setL(){
 }
 
 function setRes() {
-  P_sol = inputRes.value();
+  P_sol = Number(inputRes.value());
+  
 }
 
 function setP() {
