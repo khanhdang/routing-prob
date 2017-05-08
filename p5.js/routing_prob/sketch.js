@@ -268,20 +268,30 @@ function DrawGraph(){
   
   
   var posx, posy;
+  var calarr;
   for (var i=0; i<statP.length; i++){
+    // draw real
     strokeWeight(5);
     fill(255,0,0);
     stroke(255,0,0);
     posx = 450+statP[i]*(750-450);
     posy = 350-statArr[i]*(300);
-    //console.log(posx);
-    //console.log(posy);
     point(posx,posy);
     strokeWeight(1);
-    fill(0,0,255);
-    stroke(0,0,255);
+    fill(0,0,5);
+    stroke(0,0,5);
     //text(statP[i]+":"+statArr[i],posx ,posy + 10);
     text(statArr[i],posx ,posy + 10);
+    //draw tuan
+    strokeWeight(5);
+    fill(0,255,0);
+    stroke(0,255,0);
+    posx = 450+statP[i]*(750-450);
+    calarr = f_tuan(statP[i]);
+    posy = 350-calarr*(300);
+    point(posx,posy);
+
+    strokeWeight(1);
   }
   
 }
@@ -340,3 +350,10 @@ function getLinkstatus(p_link) {
     return true;
   
 }
+
+function f_tuan(prob) {
+  var p = 1-prob;
+  return 1-(p*(1+p-(p*p)));
+     // p(1+p-p^2)
+}
+
